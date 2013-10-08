@@ -85,7 +85,6 @@ class appListView(QtGui.QListView):
 
 
 
-
     def createActions(self, ):
         self.execAction = QtGui.QAction("Exec", self,)
         self.settingAction = QtGui.QAction("Setting", self,)
