@@ -1,0 +1,405 @@
+#! C:/Program Files/Nuke7.0v6/Nuke7.0.exe -nx
+version 7.0 v6
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="-8" y="-8" w="1936" h="1056" screen="0">
+        <splitter orientation="1">
+            <split size="1289"/>
+            <splitter orientation="1">
+                <split size="43"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="656"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="582"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+            <split size="627"/>
+            <splitter orientation="2">
+                <split size="512"/>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="479"/>
+                <dock id="" activePageId="Script Editor.1">
+                    <page id="Script Editor.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name W:/COM/gene/ple/projectVFX/images/icon.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ addUserKnob {20 mariTab l Mari}
+ addUserKnob {26 cmdStatus l "listen status" t "The status of Nuke's command port" T <b>Disabled</b>}
+ addUserKnob {26 sendStatus l "send status" t "The status of Nuke's connection to Mari" T <b>Inactive</b>}
+ addUserKnob {3 socketPort l "nuke command port" t "Port to listen on. Make sure this matches the command port set in Mari's \"Nuke\" Palette."}
+ socketPort 50107
+ addUserKnob {6 enableSocket l enabled -STARTLINE}
+ addUserKnob {20 advanced n 1}
+ advanced 0
+ addUserKnob {3 portRange l "port range" t "If the main specified command port is unavailable, Nuke will try using the next port number, and continue until successful or the indicated number of ports have been tried."}
+ portRange 200
+ addUserKnob {4 enablePortRange l "" t "Indicates whether to use a range of ports up to the given number, or to use only the single one specified." -STARTLINE M {"use range" "single port only"}}
+ addUserKnob {6 localhostOnly l "local host only" t "This determines whether the Mari bridge server will listen for connections from any machine, or from \"localhost\" (the local machine) only.<p>Only allowing connections from localhost is more secure, but will prevent you from using the Nuke&lt;&gt;Mari workflow across the network." +STARTLINE}
+ addUserKnob {26 divider l "" +STARTLINE}
+ addUserKnob {1 hostName l "mari host" t "The machine name or IP address that Mari is running on.\nLeave empty if both Mari and Nuke are running on the same machine."}
+ hostName localhost
+ addUserKnob {3 socketPortSend l port t "Port that Mari is listening to. Make sure this matches the command port set in Mari's preferences." -STARTLINE}
+ socketPortSend 6100
+ addUserKnob {2 mariDataDir l "mari data dir" t "Path to directory that will hold transient data to be sent to Mari (exrs, objs and fbx files). If this is left empty, a \"mari\" directory will be created in the nk file's location"}
+ mariDataDir "\[getenv NUKE_TEMP_DIR]/mariData"
+ addUserKnob {2 mariLocation l "mari launch path" t "The path to launch Mari from.<br>This can also be set using the <b>MARI_INSTALL_PATH</b> environment variable."}
+}
+Constant {
+ inputs 0
+ color {0.02099999972 0.02099999972 0.02099999972 0}
+ format "600 300 0 0 600 300 1 640"
+ name Constant2
+ xpos 366
+ ypos -241
+}
+set N103c65a0 [stack 0]
+Ramp {
+ output alpha
+ p0 {589 200}
+ p1 {404 200}
+ type smooth
+ name Ramp1
+ xpos 724
+ ypos 96
+ disable true
+}
+push $N103c65a0
+Rectangle {
+ inputs 1+1
+ area {0 -1 600 300}
+ softness 21
+ name Rectangle1
+ xpos 586
+ ypos 102
+ disable true
+}
+Constant {
+ inputs 0
+ channels rgb
+ format "128 128 0 0 128 128 1 128"
+ name Constant3
+ xpos 1086
+ ypos -257
+}
+Text {
+ message APP
+ font C:/Windows/Fonts/AGENCYB.TTF
+ size 79
+ xjustify center
+ yjustify center
+ Transform 1
+ box {0 0 128 128}
+ center {50 50}
+ color {0.93 0.46935 0 1}
+ name Text2
+ xpos 1086
+ ypos -117
+}
+Write {
+ channels rgba
+ file W:/COM/gene/ple/projectVFX/images/apps/null.png
+ file_type png
+ checkHashOnRead false
+ version 1
+ name Write3
+ xpos 1086
+ ypos -93
+}
+Constant {
+ inputs 0
+ channels rgb
+ format "100 100 0 0 100 100 1 100"
+ name Constant4
+ xpos 75
+ ypos 280
+}
+Text {
+ message "Time\nLog!"
+ font C:/Windows/Fonts/Arial.ttf
+ size 40
+ kerning 0.028
+ leading -0.022
+ xjustify center
+ yjustify center
+ box {2 1.399999619 98.80000305 98.40000153}
+ center {50 50}
+ color {0.05200000107 0.3000000119 1 1}
+ name Text3
+ xpos 74
+ ypos 377
+}
+Write {
+ channels rgba
+ file W:/COM/gene/ple/projectVFX/images/timelog1_0_1.png
+ file_type png
+ checkHashOnRead false
+ version 1
+ name Write4
+ xpos 74
+ ypos 437
+}
+Constant {
+ inputs 0
+ channels rgb
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant1
+ xpos -41
+ ypos -299
+}
+set N1d945a90 [stack 0]
+Radial {
+ area {29.51868956 29.86610347 226.4813104 226.1338965}
+ softness 0
+ name Radial4
+ xpos 182
+ ypos -197
+}
+push $N1d945a90
+Text {
+ inputs 1+1
+ message VFX
+ font C:/Windows/Fonts/AGENCYB.TTF
+ size 170
+ kerning -0.023
+ xjustify center
+ yjustify center
+ Transform 1
+ box {16 16 240 240}
+ center {50 50}
+ color {0.93 0.46935 0 1}
+ name Text1
+ xpos 83
+ ypos -177
+}
+Blur {
+ size 2.5
+ name Blur1
+ xpos 83
+ ypos -129
+}
+Grade {
+ multiply {0.6800000072 0.6600000262 0.1850000024 1}
+ name Grade1
+ xpos 83
+ ypos -82
+ disable true
+}
+push $N1d945a90
+Radial {
+ area {6 6 250 250}
+ softness 0.05
+ color {0.9300000072 0.4693500102 0 1}
+ name Radial1
+ xpos -41
+ ypos -207
+}
+Radial {
+ area {8 8 93.40000153 93.40000153}
+ softness 0.105
+ color {0.01400000043 0.01400000043 0.01400000043 1}
+ name Radial2
+ xpos -41
+ ypos -148
+ disable true
+}
+Radial {
+ area {19.5 20.5 236.5 235.5}
+ softness 0.05
+ color {0.008500000462 0.008500000462 0.008500000462 1}
+ name Radial3
+ xpos -41
+ ypos -124
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos -41
+ ypos -82
+}
+set N1daa8dd0 [stack 0]
+Write {
+ channels rgba
+ file W:/COM/gene/ple/projectVFX/images/vfx.png
+ file_type png
+ checkHashOnRead false
+ version 17
+ name Write1
+ xpos -41
+ ypos -10
+}
+push $N1daa8dd0
+Write {
+ channels rgba
+ file W:/COM/gene/ple/projectVFX/images/vfx48.png
+ file_type png
+ checkHashOnRead false
+ version 18
+ name Write5
+ xpos -154
+ ypos 1
+}
+push $N103c65a0
+Roto {
+ output alpha
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44800000 x44428000}
+    {a}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {xc297b2d3 0}
+        {x43077e9a x41e7a937}
+        {x4297b2d8 0}
+        {0 xc297b2cd}
+        {x43886a75 x43264b7b}
+        {0 x4297b2d6}
+        {x4297b2d8 0}
+        {x43077e9a x4397d0e8}
+        {xc297b2d3 0}
+        {0 x4297b2d6}
+        {xbfebddd4 x43264b7b}
+        {0 xc297b2cd}}}     idem}
+     {tx 1 xc28c0000 x43984000}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40e00000}}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 0}
+        {xc142ef18 x432af334}
+        {0 0}
+        {0 0}
+        {x430a3af7 x439f7c2b}
+        {0 0}
+        {0 0}
+        {x43defffc x439b3333}
+        {0 0}
+        {0 0}
+        {x44150001 x4330999b}
+        {0 0}
+        {0 0}
+        {x438b6665 xc1f7ffff}
+        {0 0}
+        {0 0}
+        {xc1b99990 xc20a6668}
+        {0 0}}}     idem}
+     {tx 1 x43716666 x430c999a}
+     {a str 1 spx x44800000 spy x44428000 sb 1 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ro 0 go 0 bo 0 ao 0 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ view {}
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name Roto1
+ xpos 578
+ ypos 180
+}
+push $N1daa8dd0
+Transform {
+ translate {14 38}
+ scale {0.35 0.35}
+ center {128 128}
+ name Transform1
+ xpos 206
+ ypos 42
+}
+push $N103c65a0
+Radial {
+ area {-114 75 692 536}
+ softness 1.7
+ color {0.07 0.07 0.07 0}
+ name Radial5
+ xpos 366
+ ypos -124
+}
+Merge2 {
+ inputs 2
+ name Merge2
+ xpos 366
+ ypos 42
+}
+Shuffle {
+ alpha white
+ name Shuffle1
+ xpos 366
+ ypos 89
+}
+Copy {
+ inputs 2
+ from0 rgba.alpha
+ to0 rgba.alpha
+ name Copy1
+ xpos 365
+ ypos 143
+ disable true
+}
+Premult {
+ name Premult1
+ xpos 365
+ ypos 199
+ disable true
+}
+Write {
+ channels rgba
+ file W:/COM/gene/ple/projectVFX/images/vfxSplash.png
+ file_type png
+ checkHashOnRead false
+ version 19
+ name Write2
+ selected true
+ xpos 365
+ ypos 273
+}
+Viewer {
+ input_process false
+ name Viewer1
+ xpos 365
+ ypos 355
+}

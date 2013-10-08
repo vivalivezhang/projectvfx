@@ -1,0 +1,33 @@
+<span style="font-size:16px;">＃ -*- coding: utf-8 -*-
+
+import sys
+
+ PyQt4.QtGui import QApplication
+ PyQt4.QtNetwork import QLocalSocket， QLocalServer
+
+ mainwindow import MainWindow
+
+def main（）:
+    app = QApplication（sys.argv）
+
+    serverName = ""myuniqueservername""
+    socket = QLocalSocket（）
+    socket.connectToServer（serverName）
+    
+    ＃ 若是连接成功，注解server已经存在，当前已有实例在运行
+    if socket.waitForConnected（500）:
+        return（app.quit（））
+    
+    ＃ 没有实例运行，创建办事器   
+    localServer = QLocalServer（）     
+    localServer.listen（serverName）    
+    
+    try:        
+        window = MainWindow（）
+        window.show（）
+        app.exec_（）
+    finally:
+        localServer.close（）
+
+if __name__ == ""__main__"":
+    main（）</span>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<show>
+    <app>
+        <name>houdini</name>
+        <exec>C:\Program Files\Side Effects Software\Houdini 12.0.581\bin\houdini.exe</exec>
+        <ver>12_0_581</ver>
+        <env>
+            <NUKE_PATH mode="append_tail">/All/Oxygen/util/nuke/7.0_test</NUKE_PATH>
+            <TEST mode="append_tail">/All/Oxygen/util/nuke/6.3_test</TEST>
+        </env>
+    </app>
+    
+    <app>
+        <name>nuke</name>
+        <exec>C:\Program Files\Nuke7.0v4\Nuke7.0.exe</exec>
+        <ver>6_3v4</ver>
+        <env>
+            <NUKE_PATH mode="append_tail">/All/Oxygen/util/nuke/7.0_test</NUKE_PATH>
+            <TEST mode="append_tail">/All/Oxygen/util/nuke/6.3_test</TEST>
+        </env>
+    </app>
+    
+    <app>
+        <name>maya</name>
+        <exec>/usr/autodesk/maya2012-x64/bin/maya2012</exec>
+        <ver>2012</ver>
+        <env>
+            <NUKE_PATH mode="append_tail">/All/Oxygen/util/nuke/7.0_test</NUKE_PATH>
+        </env>
+    </app>
+    
+    <env>
+        <FPS mode="new">24</FPS>
+        <TEST1 mode="new">test1</TEST1>
+    </env>
+
+</show>

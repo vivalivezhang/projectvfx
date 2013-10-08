@@ -1,0 +1,15 @@
+<RCC>
+  <qresource>
+    <file>apps/houdini.png</file>
+    <file>apps/houdini12_0_581.png</file>
+    <file>apps/maya.png</file>
+    <file>apps/maya2012.png</file>
+    <file>apps/nuke.png</file>
+    <file>apps/nuke6_3v4.png</file>
+    <file>apps/nuke7_0v4.png</file>
+    <file>apps/null.png</file>
+    <file>apps/rv.png</file>
+    <file>apps/rv3_12_18.png</file>
+    <file>apps/timelog.png</file>
+  </qresource>
+</RCC>

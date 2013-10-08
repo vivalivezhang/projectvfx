@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<show>
+
+    
+    <app>
+        <name>timelog</name>
+        <exec>/usr/autodesk/maya2012-x64/bin/maya2012</exec>
+        <ver>2012</ver>
+        <env></env>
+    </app>
+    
+    <env></env>
+
+</show>
