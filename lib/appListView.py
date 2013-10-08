@@ -70,6 +70,7 @@ class appListView(QtGui.QListView):
         #log_(sttingEnv)
 
 
+
         #sttingEnv['NUKE_PATH'] = '/All/Oxygen/util/nuke/7.0_test:/All/Oxygen/cpp/eclipse_test/ndk_test_1/so'
         finalEnv = appEnvCalc(sttingEnvs).getResult()
 
