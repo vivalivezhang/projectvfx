@@ -7,8 +7,8 @@ from appEnvCalc import appEnvCalc
 class appListView(QtGui.QListView):
     def __init__(self, parent = None):
         super(appListView, self).__init__(parent)
-        
-        
+
+
         self.setViewMode(QtGui.QListView.IconMode)
         self.setVerticalScrollMode(QtGui.QAbstractItemView.ScrollPerPixel)
         self.setHorizontalScrollMode(QtGui.QAbstractItemView.ScrollPerPixel)
