@@ -78,6 +78,8 @@ class projectVFX_mainWindow(QtGui.QMainWindow, Ui_mainWindowPVFX):
         self.listViewPj.selectionModel().selectionChanged.connect(self.on_listViewPj_selectionChanged_event)
 
         self.pushButton.clicked.connect(self.showTrayMessage)
+        
+        self.listViewSW.execed.connect(self.hideThis)
 
         self.setLocale(QtCore.QLocale('UnitedStates'))
         self.setWindowTitle('projectVFX')
@@ -144,6 +146,16 @@ class projectVFX_mainWindow(QtGui.QMainWindow, Ui_mainWindowPVFX):
             self.writeSettings()
             self.hide()
             event.ignore()
+            
+    def hideThis(self, ):
+        if self.trayIcon.isVisible():
+            #QtGui.QMessageBox.information(self, "Systray",
+            #        "The program will keep running in the system tray. To "
+            #        "terminate the program, choose <b>Quit</b> in the "
+            #        "context menu of the system tray entry.")
+            self.writeSettings()
+            self.hide()
+    
 
     def showEvent(self, event):
         self.readSettings()

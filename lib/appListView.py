@@ -5,6 +5,7 @@ from appEnvCalc import appEnvCalc
 
 
 class appListView(QtGui.QListView):
+    execed = QtCore.Signal()
     def __init__(self, parent = None):
         super(appListView, self).__init__(parent)
 
@@ -81,6 +82,7 @@ class appListView(QtGui.QListView):
         try:
             # exec! #
             subprocess.Popen(execFile, env = finalEnv,)#shell = True)#(SYS_TYPE_ not in ('win', 'mac') ) )
+            self.execed.emit()
         except Exception, error:
             QtGui.QMessageBox.critical(self, 'error', str(error).decode('UTF8'))
 

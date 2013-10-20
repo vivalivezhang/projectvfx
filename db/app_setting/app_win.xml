@@ -13,7 +13,7 @@
     
     <app>
         <name>nuke</name>
-        <exec>C:\Program Files\Nuke7.0v9\Nuke7.0.exe</exec>
+        <exec>C:\Program Files\Nuke7.0v9\Nuke7.0.exe --nukex</exec>
         <ver>7_0v9</ver>
         <env>
             <NUKE_PATH mode="append_tail">Y:\COM\gene\nuke\test\version\r</NUKE_PATH>
