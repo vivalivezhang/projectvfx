@@ -13,11 +13,12 @@
     
     <app>
         <name>nuke</name>
-        <exec>C:\Program Files\Nuke7.0v6\Nuke7.0.exe</exec>
-        <ver>6_3v4</ver>
+        <exec>/Applications/Nuke7.0v9/Nuke7.0v9.app/Contents/MacOS/Nuke7.0v9</exec>
+        <ver>Nuke7.0v9</ver>
         <env>
-            <NUKE_PATH mode="append_tail">/All/Oxygen/util/nuke/7.0_test</NUKE_PATH>
-            <TEST mode="append_tail">/All/Oxygen/util/nuke/6.3_test</TEST>
+            <NUKE_PATH mode="append_tail">/ibrix3/COM/gene/nuke/test/version/r</NUKE_PATH>
+            <PJC_DEBUG mode="append_tail">/ibrix3/COM/gene/nuke/test/version/r</PJC_DEBUG>
+
         </env>
     </app>
     
