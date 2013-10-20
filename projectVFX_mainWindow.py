@@ -138,14 +138,8 @@ class projectVFX_mainWindow(QtGui.QMainWindow, Ui_mainWindowPVFX):
 
 
     def closeEvent(self, event):
-        if self.trayIcon.isVisible():
-            #QtGui.QMessageBox.information(self, "Systray",
-            #        "The program will keep running in the system tray. To "
-            #        "terminate the program, choose <b>Quit</b> in the "
-            #        "context menu of the system tray entry.")
-            self.writeSettings()
-            self.hide()
-            event.ignore()
+        self.hideThis()
+        event.ignore()
             
     def hideThis(self, ):
         if self.trayIcon.isVisible():

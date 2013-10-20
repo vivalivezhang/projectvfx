@@ -1,3 +1,0 @@
-#!/bin/bash
-#source ~/.bashrc
-python26 $(dirname "$0")/projectVFX_mainWindow.py
