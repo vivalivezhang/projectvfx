@@ -15,7 +15,7 @@ SETTING_FILE = QtCore.QSettings(os.path.expanduser("~/.ProjectVFX/ProjectVFX_pre
                                                          QtCore.QSettings.IniFormat)
 #SETTING_FILE.setIniCodec('UTF-8')
 
-APP_SETTING_PATH = (opj(BASE_PATH_F_, 'COM/gene/ple/projectVFX', 'db', 'app_setting'))
+APP_SETTING_PATH = (opj(BASE_PATH_F_, 'COM/gene/ple/projectvfx', 'db', 'app_setting'))
 
 
 
