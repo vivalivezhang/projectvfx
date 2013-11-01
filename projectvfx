@@ -1,8 +1,4 @@
-#!/bin/bash
-#add for chkconfig
-#chkconfig: 5 70 30
-#description: projectvfx
-#processname: projectvfx
+#!/bin/sh
 #source ~/.bashrc
 python $(dirname "$0")/projectVFX_mainWindow.py
 
