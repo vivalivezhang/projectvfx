@@ -13,8 +13,8 @@
     
     <app>
         <name>nuke</name>
-        <exec>/Applications/Nuke7.0v9/Nuke7.0v9.app/Contents/MacOS/nukex</exec>
-        <ver>Nuke7.0v9</ver>
+        <exec>/Applications/Nuke8.0v1b30/Nuke8.0v1b30.app/Contents/MacOS/nukex</exec>
+        <ver>Nuke8_0v1</ver>
         <env>
             <NUKE_PATH mode="append_tail">/ibrix3/COM/gene/nuke/test/version/r</NUKE_PATH>
 
