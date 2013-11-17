@@ -13,8 +13,8 @@
     
     <app>
         <name>nuke</name>
-        <exec>C:\Program Files\Nuke7.0v9\Nuke7.0.exe --nukex</exec>
-        <ver>7_0v9</ver>
+        <exec>C:\Program Files\Nuke8.0v1b30\Nuke8.0.exe -i --nukex</exec>
+        <ver>8_0v1</ver>
         <env>
             <NUKE_PATH mode="append_tail">Y:\COM\gene\nuke\test\version\r</NUKE_PATH>
             <NUKE_TEMP_DIR mode="replace">C:\Nuke_diskcache\USERNAME</NUKE_TEMP_DIR>
