@@ -13,7 +13,7 @@
     
     <app>
         <name>nuke</name>
-        <exec>C:\Program Files\Nuke8.0v1b30\Nuke8.0.exe -i --nukex</exec>
+        <exec>C:\Program Files\Nuke8.0v1\Nuke8.0.exe -i --nukex</exec>
         <ver>8_0v1</ver>
         <env>
             <NUKE_PATH mode="append_tail">Y:\COM\gene\nuke\test\version\r</NUKE_PATH>

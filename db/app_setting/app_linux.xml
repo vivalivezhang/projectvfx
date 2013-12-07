@@ -13,7 +13,7 @@
     
     <app>
         <name>nuke</name>
-        <exec>/All/Oxygen/APP/Nuke8.0v1b30/Nuke</exec>
+        <exec>/All/Oxygen/APP/Nuke8.0v1/Nuke</exec>
         <ver>8_0v1</ver>
         <env>
             <NUKE_PATH mode="append_tail">/ibrix3/COM/gene/nuke/test/version/r:/All/Oxygen/cpp/eclipse_test/ndk_test_1/so</NUKE_PATH>
