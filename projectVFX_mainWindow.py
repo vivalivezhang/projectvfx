@@ -352,10 +352,10 @@ def main():
 
 
 
-        if not QtGui.QSystemTrayIcon.isSystemTrayAvailable():
-            QtGui.QMessageBox.critical(None, "Systray",
-                    "Couldn't detect any system tray on this system.")
-            sys.exit(1)
+        #if not QtGui.QSystemTrayIcon.isSystemTrayAvailable():
+        #    QtGui.QMessageBox.critical(None, "Systray",
+        #            "Couldn't detect any system tray on this system.")
+        #    sys.exit(1)
 
         QtGui.QApplication.setQuitOnLastWindowClosed(False)
 
@@ -368,7 +368,7 @@ def main():
         splash.finish(window)
         del splash
 
-        #app.exec_()
+
         sys.exit(app.exec_())
         ######################################
         if (shareMem.isAttached()):
